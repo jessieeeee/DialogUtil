@@ -7,16 +7,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.jessie.dialogutil.list.BaseListDialogFragment;
-import com.jessie.dialogutil.list.DialogListAdapter;
-import com.jessie.dialogutil.list.Item;
-import com.jessie.dialogutil.list.ListDialogFragment;
-import com.jessie.dialogutil.load.LoadDialogFragment;
-import com.jessie.dialogutil.normal.BaseNormalDialogFragment;
-import com.jessie.dialogutil.normal.NormalDialogFragment;
-
 import java.util.Iterator;
 import java.util.List;
+
+import dialogutil.jessie.com.dialoglibrary.list.BaseListDialogFragment;
+import dialogutil.jessie.com.dialoglibrary.list.DialogListAdapter;
+import dialogutil.jessie.com.dialoglibrary.list.Item;
+import dialogutil.jessie.com.dialoglibrary.list.ListDialogFragment;
+import dialogutil.jessie.com.dialoglibrary.load.LoadDialogFragment;
+import dialogutil.jessie.com.dialoglibrary.normal.BaseNormalDialogFragment;
+import dialogutil.jessie.com.dialoglibrary.normal.NormalDialogFragment;
 
 public class MainActivity extends FragmentActivity {
 
