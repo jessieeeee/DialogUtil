@@ -6,7 +6,9 @@ Multiple types dialog in android program use DialogFragment
 ### load dialog
 
 - ![image](https://github.com/jessieeeee/DialogUtil/blob/master/Kapture%202016-12-09%20at%2021.36.33.gif)
-### Using library in your application
+
+
+## Using library in your application
 ### Step 1. Add the JitPack repository to your build file
 Add it in your root build.gradle at the end of repositories:
 	<pre>
@@ -17,7 +19,7 @@ Add it in your root build.gradle at the end of repositories:
 		}
 	}
 	</pre>
-Step 2. Add the dependency
+### Step 2. Add the dependency
 <pre>
 dependencies {
 	        compile 'com.github.jessieeeee:DialogUtil:032652fd2e'
