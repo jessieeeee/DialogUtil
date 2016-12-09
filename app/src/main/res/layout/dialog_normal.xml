@@ -1,0 +1,83 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/dialog_bg_round">
+
+        <LinearLayout
+            android:id="@+id/dia_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="取消"
+                android:textColor="@color/default_blue"
+                />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="45dp"
+                android:background="@color/default_blue"
+                />
+
+            <Button
+                android:id="@+id/btn_sure"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/dialog_btn_bg_round"
+                android:text="确定"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/dia_ll"
+            android:background="@color/default_blue"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/dia_ll"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/dialog_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/dialog_icon"
+                />
+
+            <TextView
+                android:id="@+id/text_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dialog_icon"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="15dp"
+                android:text="发现新版本"
+                android:textColor="@color/default_blue"
+                />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
