@@ -22,6 +22,8 @@ public abstract class BaseDialogFragment extends DialogFragment {
     protected int layout;//布局文件id
     protected static final int DEFAULT_COLOR = -1; //default
     protected static final int DEFAULT_BG= -1;
+    protected static final int DEFAULT_ICON=-1;
+    protected static final int HIDE_ICON=-2;//隐藏字段
     protected int animation = R.style.BottomDialog;//动画类型
     public static final int BOTTOM_TO_TOP=0;
     public static final int TOP_TO_BOTTOM=1;

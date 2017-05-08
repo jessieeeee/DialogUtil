@@ -77,6 +77,7 @@ public class MainActivity extends FragmentActivity {
                 .setCancelTextColor(R.color.default_blue)
                 .setSuretext("确定")
                 .setCanceltext("取消")
+                .hideIcon()
                 .setSureBg(R.drawable.dialog_btn_bg_round)
                 .setOnBtnClickListener(new BaseNormalDialogFragment.ClickListener() {
                     @Override

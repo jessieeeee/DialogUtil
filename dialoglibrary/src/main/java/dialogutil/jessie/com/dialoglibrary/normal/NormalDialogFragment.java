@@ -20,6 +20,7 @@ public class NormalDialogFragment extends BaseNormalDialogFragment {
     private int cancelColor=DEFAULT_COLOR;
     private int sureBg=DEFAULT_BG;
     private int cancelBg=DEFAULT_BG;
+    private int dialogIcon=DEFAULT_ICON;
     protected static final String TAG_ARG = "layout";
 
     public static NormalDialogFragment newInstance() {
@@ -80,6 +81,16 @@ public class NormalDialogFragment extends BaseNormalDialogFragment {
         this.cancelBg=cancelBg;
         return this;
     }
+
+    public NormalDialogFragment setDialogIcon(int res){
+        this.dialogIcon=res;
+        return this;
+    }
+
+    public NormalDialogFragment hideIcon(){
+        this.dialogIcon=HIDE_ICON;
+        return this;
+    }
     @Override
     protected int getSureTextColor() {
         return sureTextColor;
@@ -117,5 +128,7 @@ public class NormalDialogFragment extends BaseNormalDialogFragment {
         return cancelBg;
     }
 
-
+    protected int getDialogIcon(){
+        return dialogIcon;
+    }
 }

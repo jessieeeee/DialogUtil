@@ -3,6 +3,7 @@ package dialogutil.jessie.com.dialoglibrary.normal;
 import android.app.Dialog;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import dialogutil.jessie.com.dialoglibrary.R;
@@ -37,6 +38,7 @@ public abstract class BaseNormalDialogFragment extends BaseDialogFragment {
         TextView textMsg = (TextView) view.findViewById(R.id.text_msg);
         Button sureButton = (Button) view.findViewById(R.id.btn_sure);
         Button cancelButton = (Button) view.findViewById(R.id.btn_cancel);
+        ImageView dialog_icon= (ImageView) view.findViewById(R.id.dialog_icon);
         if (getSureTextColor() != DEFAULT_COLOR) {
             sureButton.setTextColor(getResources().getColor(getSureTextColor()));
         }
@@ -49,6 +51,15 @@ public abstract class BaseNormalDialogFragment extends BaseDialogFragment {
         if (getSureBg() != DEFAULT_BG) {
             sureButton.setBackgroundResource(getSureBg());
         }
+        if( getDialogIcon() != DEFAULT_ICON){
+            if(getDialogIcon()==HIDE_ICON){
+                dialog_icon.setVisibility(View.GONE);
+            }else{
+                dialog_icon.setVisibility(View.VISIBLE);
+                dialog_icon.setImageResource(getDialogIcon());
+            }
+        }
+
         textMsg.setText(getContent());
         sureButton.setText(getSureText());
         cancelButton.setText(getCancelText());
@@ -94,5 +105,6 @@ public abstract class BaseNormalDialogFragment extends BaseDialogFragment {
 
     protected abstract int getCancelBg();
 
+    protected abstract int getDialogIcon();
 
 }
