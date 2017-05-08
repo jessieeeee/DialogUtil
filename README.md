@@ -1,7 +1,7 @@
 # DialogUtil
 Multiple types dialog in android program use DialogFragment
-##support
-###  normal dialog
+## support
+### normal dialog
 ### list dialog(single-choice,multiple-choice,list and grid)
 ### load dialog
 
