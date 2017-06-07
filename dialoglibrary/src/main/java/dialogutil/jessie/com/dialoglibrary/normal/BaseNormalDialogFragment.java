@@ -54,12 +54,14 @@ public abstract class BaseNormalDialogFragment extends BaseDialogFragment {
         if (getSureBg() != DEFAULT_BG) {
             sureButton.setBackgroundResource(getSureBg());
         }
+
         if (getDividerHorizontalColor() != DEFAULT_COLOR){
             divider_horizontal.setBackgroundColor(getResources().getColor(getDividerHorizontalColor()));
         }
         if (getDividerVerticalColor() != DEFAULT_COLOR){
             divider_vertical.setBackgroundColor(getResources().getColor(getDividerVerticalColor()));
         }
+
         if( getDialogIcon() != DEFAULT_ICON){
             if(getDialogIcon()==HIDE_ICON){
                 dialog_icon.setVisibility(View.GONE);

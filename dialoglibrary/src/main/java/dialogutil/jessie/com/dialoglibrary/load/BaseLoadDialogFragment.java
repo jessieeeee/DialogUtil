@@ -79,6 +79,7 @@ public abstract class BaseLoadDialogFragment extends BaseDialogFragment {
     //获得加载图片
     protected abstract int getLoadImg();
 
+
     //设置加载进度图1
     protected abstract int getLoadShape1();
 
@@ -87,4 +88,5 @@ public abstract class BaseLoadDialogFragment extends BaseDialogFragment {
 
     //设置背景
     protected abstract int getBackgroundShape();
+
 }

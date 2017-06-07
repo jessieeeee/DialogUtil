@@ -21,8 +21,10 @@ public class NormalDialogFragment extends BaseNormalDialogFragment {
     private int sureBg=DEFAULT_BG;
     private int cancelBg=DEFAULT_BG;
     private int dialogIcon=DEFAULT_ICON;
+
     private int dividerVerticalColor=DEFAULT_COLOR;
     private int dividerHorizontalColor=DEFAULT_COLOR;
+
     protected static final String TAG_ARG = "layout";
 
     public static NormalDialogFragment newInstance() {
@@ -94,6 +96,7 @@ public class NormalDialogFragment extends BaseNormalDialogFragment {
         return this;
     }
 
+
     public NormalDialogFragment setDividerVerticalColor(int dividerVerticalColor){
         this.dividerVerticalColor=dividerVerticalColor;
         return this;
@@ -103,6 +106,7 @@ public class NormalDialogFragment extends BaseNormalDialogFragment {
         this.dividerHorizontalColor=dividerHorizontalColor;
         return this;
     }
+
     @Override
     protected int getSureTextColor() {
         return sureTextColor;
@@ -153,4 +157,5 @@ public class NormalDialogFragment extends BaseNormalDialogFragment {
     protected int getDividerHorizontalColor() {
         return dividerHorizontalColor;
     }
+
 }

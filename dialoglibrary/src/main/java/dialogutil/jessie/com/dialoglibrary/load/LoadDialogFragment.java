@@ -20,6 +20,7 @@ public class LoadDialogFragment extends BaseLoadDialogFragment{
     private int loadShape1=R.drawable.load_cicle_blue;
     private int loadShape2=R.drawable.load_cicle_gray;
     private int backgroundShape=R.drawable.bg_load;
+
     public static LoadDialogFragment newInstance(){
         LoadDialogFragment fragment=new LoadDialogFragment();
         Bundle bundle = new Bundle();
@@ -68,6 +69,7 @@ public class LoadDialogFragment extends BaseLoadDialogFragment{
         return this;
     }
 
+
     @Override
     protected int getLoadMsgColor() {
         return loadMsgColor;
@@ -97,6 +99,5 @@ public class LoadDialogFragment extends BaseLoadDialogFragment{
     protected int getBackgroundShape() {
         return backgroundShape;
     }
-
 
 }
