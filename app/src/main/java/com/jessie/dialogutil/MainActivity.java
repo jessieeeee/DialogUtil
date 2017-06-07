@@ -144,8 +144,8 @@ public class MainActivity extends FragmentActivity {
         LoadDialogFragment loadDialogFragment = LoadDialogFragment.newInstance()
                 .setLoadMsgText("正在加载中")
                 .setLoadImg(R.drawable.load_progress)
-                .setLoadShape1(R.drawable.load_cicle_gray)
-                .setLoadShape2(R.drawable.load_cicle_blue)
+                .setLoadShape1(R.drawable.load_cicle_blue)
+                .setLoadShape2(R.drawable.load_cicle_gray)
                 .setBackgroundShape(R.drawable.bg_load)
                 .setLoadMsgColor(R.color.white);
 

@@ -27,30 +27,33 @@ compile 'com.github.jessieeeee:DialogUtil:v1.0.1'
 </pre>
 ###How to Use
 1. normalDialog
-<pre>
- NormalDialogFragment.newInstance()
-                .setContent("这只是一个普通的提示弹窗")
-                .setSureTextColor(R.color.white)
-                .setCancelTextColor(R.color.default_blue)
-                .setSuretext("确定")
-                .setCanceltext("取消")
-                .setSureBg(R.drawable.dialog_btn_bg_round)
-                .setOnBtnClickListener(new BaseNormalDialogFragment.ClickListener() {
-                    @Override
-                    public void clickSure() {
-                        Toast.makeText(context, "点击了确定", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void clickCancel() {
-                        Toast.makeText(context, "点击了取消", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .setDialogAnimation(BaseListDialogFragment.BOTTOM_TO_TOP)
-                .showDialog(getFragmentManager());
-</pre>
+```java
+   NormalDialogFragment.newInstance()
+                 .setContent("这只是一个普通的提示弹窗")
+                 .setSureTextColor(R.color.white)
+                 .setCancelTextColor(R.color.default_blue)
+                 .setSuretext("确定")
+                 .setCanceltext("取消")
+                 .setDividerHorizontalColor(R.color.default_line)
+                 .setDividerVerticalColor(R.color.default_line)
+                 .hideIcon()
+                 .setSureBg(R.drawable.dialog_btn_bg_round)
+                 .setOnBtnClickListener(new BaseNormalDialogFragment.ClickListener() {
+                     @Override
+                     public void clickSure() {
+                         Toast.makeText(context, "点击了确定", Toast.LENGTH_SHORT).show();
+                     }
+ 
+                     @Override
+                     public void clickCancel() {
+                         Toast.makeText(context, "点击了取消", Toast.LENGTH_SHORT).show();
+                     }
+                 })
+                 .setDialogAnimation(BaseListDialogFragment.BOTTOM_TO_TOP)
+                 .showDialog(getFragmentManager());
+```
 2. listDialog
-<pre>
+```java
   ListDialogFragment.newInstance(orientation)
                 .setListTitleText("分享到")
                 .setBackText("返回")
@@ -90,17 +93,21 @@ compile 'com.github.jessieeeee:DialogUtil:v1.0.1'
                 })
                 .setDialogAnimation(animation)
                 .showDialog(getFragmentManager());
-</pre>
+```
 
 3. loadDialog
-<pre>
- LoadDialogFragment loadDialogFragment = LoadDialogFragment.newInstance()
+```java
+   LoadDialogFragment loadDialogFragment = LoadDialogFragment.newInstance()
                 .setLoadMsgText("正在加载中")
                 .setLoadImg(R.drawable.load_progress)
+                .setLoadShape1(R.drawable.load_cicle_blue)
+                .setLoadShape2(R.drawable.load_cicle_gray)
+                .setBackgroundShape(R.drawable.bg_load)
                 .setLoadMsgColor(R.color.white);
+
         loadDialogFragment .setDialogAnimation(BaseListDialogFragment.BOTTOM_TO_TOP).showDialog(getFragmentManager());
 //        loadDialogFragment.dismiss();
-</pre>
+```
 
 
 
