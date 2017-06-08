@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -98,10 +99,24 @@ public class MainActivity extends FragmentActivity {
 
     //展示列表框
     public void showListDialog(int orientation, int gravity, final boolean multipleChoice,int animation) {
+        List<Item> items = new ArrayList<>();
+
+        items.add(new Item(1, "通讯录", getResources().getDrawable(R.drawable.icon_content_phone)));
+        items.add(new Item(2, "好友", getResources().getDrawable(R.drawable.icon_friend)));
+        items.add(new Item(3, "朋友圈", getResources().getDrawable(R.drawable.icon_moments)));
+        items.add(new Item(4, "微信", getResources().getDrawable(R.drawable.icon_wechat)));
+        items.add(new Item(5, "微信", getResources().getDrawable(R.drawable.icon_wechat)));
         ListDialogFragment.newInstance(orientation)
                 .setListTitleText("分享到")
+                .setListTitleColor(R.color.black)
                 .setBackText("返回")
                 .setSureText("确定")
+                .setRowNum(3)   //仅在网格布局有效
+                .setBackTextTitleColor(R.color.colorAccent)
+                .setSureTextTitleColor(R.color.colorAccent)
+                .setItems(items)
+                .setTitleBarColor(R.color.white)
+                .setListColor(R.color.white)
                 .setMultipleChoice(multipleChoice)
                 .setGravity(gravity)
                 .setClickListener(new BaseListDialogFragment.ClickListener() {

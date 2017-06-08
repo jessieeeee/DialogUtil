@@ -39,12 +39,12 @@ public class DialogListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     private List<Item> mItems = Collections.emptyList();
     private OnItemClickListener itemClickListener;
-    public static final int HORIZONTAL = 0;
-    public static final int VERTICAL = 1;
-    public static final int GRID=2;
+    public  final int HORIZONTAL = 0;
+    public  final int VERTICAL = 1;
+    public  final int GRID=2;
     private BaseListDialogFragment baseListDialogFragment;
     private int orientation;
-    public static final int ROW_NUM=4;
+    public  int rowNum=4;
     private boolean multipleChoice;
     private List<Item> selectItems;
     public interface OnItemClickListener {
@@ -68,6 +68,9 @@ public class DialogListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         }
     }
 
+    public void setRowNum(int rowNum){
+        this.rowNum=rowNum;
+    }
 
     public void setItemClick(OnItemClickListener onItemClickListener) {
         this.itemClickListener = onItemClickListener;
@@ -190,7 +193,11 @@ public class DialogListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             super(view);
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.width = getScreenWidth(context) / ROW_NUM;
+            if(orientation == HORIZONTAL){
+                params.width = getScreenWidth(context) / mItems.size();
+            }else{
+                params.width = getScreenWidth(context) / rowNum;
+            }
             params.setMargins(0, padding, 0, padding);
             item = new TextView(view.getContext());
             item.setLayoutParams(params);

@@ -8,13 +8,15 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import dialogutil.jessie.com.dialoglibrary.R;
 import dialogutil.jessie.com.dialoglibrary.base.BaseDialogFragment;
+
+
 
 /**
  * 创建时间: 2016/11/25
@@ -50,6 +52,10 @@ public abstract class BaseListDialogFragment extends BaseDialogFragment {
         dlg.setCanceledOnTouchOutside(true);
         dlg.getWindow().setGravity(getGravity());
         dlg.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        RelativeLayout rl_title= (RelativeLayout) view.findViewById(R.id.rl_title);
+        if(getTitleBarColor()!= DEFAULT_COLOR){
+            rl_title.setBackgroundColor(getResources().getColor(getTitleBarColor()));
+        }
 
         TextView text_list_title = (TextView) view.findViewById(R.id.text_list_title);
         text_list_title.setText(getListTitleText());
@@ -92,28 +98,27 @@ public abstract class BaseListDialogFragment extends BaseDialogFragment {
         }
 
         RecyclerView dialog_list = (RecyclerView) view.findViewById(R.id.dialog_list);
-        List<Item> items = new ArrayList<>();
-
-        items.add(new Item(1, "通讯录", getActivity().getResources().getDrawable(R.drawable.icon_content_phone)));
-        items.add(new Item(2, "好友", getActivity().getResources().getDrawable(R.drawable.icon_friend)));
-        items.add(new Item(3, "朋友圈", getActivity().getResources().getDrawable(R.drawable.icon_moments)));
-        items.add(new Item(4, "微信", getActivity().getResources().getDrawable(R.drawable.icon_wechat)));
-        addItems(items, dialog_list);
+        if(getListColor()!=DEFAULT_COLOR){
+            dialog_list.setBackgroundColor(getResources().getColor(getListColor()));
+        }
+        addItems(getDataList(), dialog_list);
 
         return dlg;
     }
 
 
     public void addItems(List<Item> items, RecyclerView dialog_list) {
+
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         RecyclerView.LayoutManager manager;
         dialogListAdapter = new DialogListAdapter(getActivity().getApplicationContext(), items, orientation,getMultipleChoice(),this);
         dialogListAdapter.setOrientation(orientation);
         dialogListAdapter.setItemClick(onItemClickListener);
+        dialogListAdapter.setRowNum(getRowNum());
         if (orientation == HORIZONTAL)
             manager = new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         else if (orientation == GRID)
-            manager = new GridLayoutManager(getActivity().getApplicationContext(), DialogListAdapter.ROW_NUM);
+            manager = new GridLayoutManager(getActivity().getApplicationContext(), getRowNum());
         else
             manager = new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.VERTICAL, false);
 
@@ -138,6 +143,13 @@ public abstract class BaseListDialogFragment extends BaseDialogFragment {
 
     public abstract int getGravity();
 
+    public abstract int getTitleBarColor();
+
+    public abstract List<Item> getDataList();
+
+    public abstract int getListColor();
+
+    public abstract int getRowNum();
     public BaseListDialogFragment setOnItemClickListener(DialogListAdapter.OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
         return this;

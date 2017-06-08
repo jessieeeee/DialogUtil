@@ -54,45 +54,59 @@ compile 'com.github.jessieeeee:DialogUtil:v1.0.1'
 ```
 2. listDialog
 ```java
-  ListDialogFragment.newInstance(orientation)
-                .setListTitleText("分享到")
-                .setBackText("返回")
-                .setSureText("确定")
-                .setMultipleChoice(multipleChoice)
-                .setGravity(gravity)
-                .setClickListener(new BaseListDialogFragment.ClickListener() {
-                    @Override
-                    public void clickSure(List<Item> selectItems) {
-                        if(selectItems.size()>0){
-                            String selectStr="";
-                            Iterator<Item> it=selectItems.iterator();
-                            while(it.hasNext()){
-                                selectStr+=" "+it.next().getTitle();
-                            }
-                            Toast.makeText(context, "选择了"+selectStr, Toast.LENGTH_SHORT).show();
-
-                        }else{
-                            Toast.makeText(context, "点击了确定", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void clickBack() {
-                        Toast.makeText(context, "点击了取消", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .setOnItemClickListener(new DialogListAdapter.OnItemClickListener() {
-                    @Override
-                    public void click(Item item, BaseListDialogFragment baseListDialogFragment) {
-                        Toast.makeText(context, item.getTitle(), Toast.LENGTH_SHORT).show();
-                        if(!multipleChoice){
-                            baseListDialogFragment.dismiss();
-                        }
-
-                    }
-                })
-                .setDialogAnimation(animation)
-                .showDialog(getFragmentManager());
+   List<Item> items = new ArrayList<>();
+  
+          items.add(new Item(1, "通讯录", getResources().getDrawable(R.drawable.icon_content_phone)));
+          items.add(new Item(2, "好友", getResources().getDrawable(R.drawable.icon_friend)));
+          items.add(new Item(3, "朋友圈", getResources().getDrawable(R.drawable.icon_moments)));
+          items.add(new Item(4, "微信", getResources().getDrawable(R.drawable.icon_wechat)));
+          items.add(new Item(5, "微信", getResources().getDrawable(R.drawable.icon_wechat)));
+          ListDialogFragment.newInstance(orientation)
+                  .setListTitleText("分享到")
+                  .setListTitleColor(R.color.black)
+                  .setBackText("返回")
+                  .setSureText("确定")
+                  .setRowNum(3)   //仅在网格布局有效
+                  .setBackTextTitleColor(R.color.colorAccent)
+                  .setSureTextTitleColor(R.color.colorAccent)
+                  .setItems(items)
+                  .setTitleBarColor(R.color.white)
+                  .setListColor(R.color.white)
+                  .setMultipleChoice(multipleChoice)
+                  .setGravity(gravity)
+                  .setClickListener(new BaseListDialogFragment.ClickListener() {
+                      @Override
+                      public void clickSure(List<Item> selectItems) {
+                          if(selectItems.size()>0){
+                              String selectStr="";
+                              Iterator<Item> it=selectItems.iterator();
+                              while(it.hasNext()){
+                                  selectStr+=" "+it.next().getTitle();
+                              }
+                              Toast.makeText(context, "选择了"+selectStr, Toast.LENGTH_SHORT).show();
+  
+                          }else{
+                              Toast.makeText(context, "点击了确定", Toast.LENGTH_SHORT).show();
+                          }
+                      }
+  
+                      @Override
+                      public void clickBack() {
+                          Toast.makeText(context, "点击了取消", Toast.LENGTH_SHORT).show();
+                      }
+                  })
+                  .setOnItemClickListener(new DialogListAdapter.OnItemClickListener() {
+                      @Override
+                      public void click(Item item, BaseListDialogFragment baseListDialogFragment) {
+                          Toast.makeText(context, item.getTitle(), Toast.LENGTH_SHORT).show();
+                          if(!multipleChoice){
+                              baseListDialogFragment.dismiss();
+                          }
+  
+                      }
+                  })
+                  .setDialogAnimation(animation)
+                  .showDialog(getFragmentManager());
 ```
 
 3. loadDialog

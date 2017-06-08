@@ -2,6 +2,8 @@ package dialogutil.jessie.com.dialoglibrary.list;
 
 import android.os.Bundle;
 
+import java.util.List;
+
 import dialogutil.jessie.com.dialoglibrary.R;
 
 
@@ -22,6 +24,10 @@ public class ListDialogFragment extends BaseListDialogFragment {
     private int sureTextTitleColor=DEFAULT_COLOR;
     private boolean multipleChoice=false;
     private int gravity=BOTTOM;//对话框显示的位置
+    private int titleBarColor=DEFAULT_COLOR;//标题栏颜色
+    private int listColor=DEFAULT_COLOR;//列表颜色
+    private int rowNum =4;
+    private List<Item> items;
     public static ListDialogFragment newInstance(int orientation) {
         //创建一个带有参数的Fragment实例
         ListDialogFragment fragment = new ListDialogFragment();
@@ -43,9 +49,43 @@ public class ListDialogFragment extends BaseListDialogFragment {
         }
     }
 
+    //仅在网格布局有效
+    public ListDialogFragment setRowNum(int rowNum){
+        this.rowNum=rowNum;
+        return this;
+    }
+    public ListDialogFragment setTitleBarColor(int titleBarColor){
+        this.titleBarColor=titleBarColor;
+        return this;
+    }
+
+    public ListDialogFragment setListColor(int listColor){
+        this.listColor=listColor;
+        return this;
+    }
+
+    public ListDialogFragment setItems(List<Item> items){
+        this.items=items;
+        return this;
+    }
+
+    public ListDialogFragment setBackTextTitleColor(int backTextTitleColor){
+        this.backTextTitleColor=backTextTitleColor;
+        return this;
+    }
+
+    public ListDialogFragment setSureTextTitleColor(int sureTextTitleColor){
+        this.sureTextTitleColor=sureTextTitleColor;
+        return this;
+    }
 
     public ListDialogFragment setListTitleText(String listTitleText){
         this.listTitleText=listTitleText;
+        return this;
+    }
+
+    public ListDialogFragment setListTitleColor(int listTitleColor){
+        this.listTitleColor=listTitleColor;
         return this;
     }
 
@@ -108,5 +148,28 @@ public class ListDialogFragment extends BaseListDialogFragment {
     public int getGravity() {
         return gravity;
     }
+
+    @Override
+    public int getTitleBarColor() {
+        return titleBarColor;
+    }
+
+
+    @Override
+    public int getListColor() {
+        return listColor;
+    }
+
+    @Override
+    public int getRowNum() {
+        return rowNum;
+    }
+
+    @Override
+    public List<Item> getDataList() {
+        return items;
+    }
+
+
 
 }
