@@ -101,11 +101,11 @@ public class MainActivity extends FragmentActivity {
     public void showListDialog(int orientation, int gravity, final boolean multipleChoice,int animation) {
         List<Item> items = new ArrayList<>();
 
-        items.add(new Item(1, "通讯录", getResources().getDrawable(R.drawable.icon_content_phone)));
-        items.add(new Item(2, "好友", getResources().getDrawable(R.drawable.icon_friend)));
-        items.add(new Item(3, "朋友圈", getResources().getDrawable(R.drawable.icon_moments)));
-        items.add(new Item(4, "微信", getResources().getDrawable(R.drawable.icon_wechat)));
-        items.add(new Item(5, "微信", getResources().getDrawable(R.drawable.icon_wechat)));
+        items.add(new Item(1, "通讯录", getResources().getDrawable(R.mipmap.icon_content_phone)));
+        items.add(new Item(2, "好友", getResources().getDrawable(R.mipmap.icon_friend)));
+        items.add(new Item(3, "朋友圈", getResources().getDrawable(R.mipmap.icon_moments)));
+        items.add(new Item(4, "微信", getResources().getDrawable(R.mipmap.icon_wechat)));
+        items.add(new Item(5, "微博", getResources().getDrawable(R.mipmap.icon_weibo)));
         ListDialogFragment.newInstance(orientation)
                 .setListTitleText("分享到")
                 .setListTitleColor(R.color.black)
