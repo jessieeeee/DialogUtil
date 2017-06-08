@@ -17,7 +17,7 @@ import dialogutil.jessie.com.dialoglibrary.base.BaseDialogFragment;
  */
 
 public abstract class BaseNormalDialogFragment extends BaseDialogFragment {
-
+    protected static final int DEFAULT_ICON=-1;
     protected static final int HIDE_ICON=-2;//隐藏字段
     protected ClickListener clickListener;//按键监听
 
