@@ -5,7 +5,7 @@ Multiple types dialog in android program use DialogFragment
 ### list dialog(single-choice,multiple-choice,list and grid)
 ### load dialog
 
-- ![image](https://github.com/jessieeeee/DialogUtil/blob/master/Kapture%202016-12-09%20at%2021.36.33.gif)
+- ![image](http://oqujmbgen.bkt.clouddn.com/%E5%88%A9%E7%94%A8dialogfragment%E5%B0%81%E8%A3%85%E5%BC%B9%E7%AA%97%E5%B7%A5%E5%85%B7%E7%B1%BB2.gif)
 
 
 ## Using library in your application
