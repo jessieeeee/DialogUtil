@@ -113,12 +113,14 @@ public class DialogListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                     if (itemClickListener != null) {
                         if(multipleChoice){
                             if(item.isCheck()){
-                                topHolder.item.setTextColor(context.getResources().getColor(R.color.black));
                                 item.setCheck(false);
+                                topHolder.item.setTextColor(context.getResources().getColor(baseListDialogFragment.getItemTextColor()));
+                                topHolder.item.setBackgroundColor(context.getResources().getColor(R.color.transparent));
                                 selectItems.remove(item);
                             }else{
-                                topHolder.item.setTextColor(context.getResources().getColor(R.color.colorAccent));
                                 item.setCheck(true);
+                                topHolder.item.setTextColor(context.getResources().getColor(baseListDialogFragment.getSelectItemTextColor()));
+                                topHolder.item.setBackgroundColor(context.getResources().getColor(baseListDialogFragment.getSelectItemBackgoundColor()));
                                 selectItems.add(item);
                             }
 
@@ -138,13 +140,14 @@ public class DialogListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                     if (itemClickListener != null) {
                         if (multipleChoice){
                             if(item.isCheck()){
-                                topHolder.item.setTextColor(context.getResources().getColor(R.color.black));
                                 item.setCheck(false);
+                                topHolder.item.setTextColor(context.getResources().getColor(baseListDialogFragment.getItemTextColor()));
+                                topHolder.item.setBackgroundColor(context.getResources().getColor(R.color.transparent));
                                 selectItems.remove(item);
                             }else{
-                                topHolder.item.setTextColor(context.getResources().getColor(R.color.colorAccent));
-
                                 item.setCheck(true);
+                                topHolder.item.setTextColor(context.getResources().getColor(baseListDialogFragment.getSelectItemTextColor()));
+                                topHolder.item.setBackgroundColor(context.getResources().getColor(baseListDialogFragment.getSelectItemBackgoundColor()));
                                 selectItems.add(item);
                             }
                         }
@@ -164,12 +167,15 @@ public class DialogListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                     if (itemClickListener != null) {
                         if (multipleChoice){
                             if(item.isCheck()){
-                                leftHolder.item.setTextColor(context.getResources().getColor(R.color.black));
                                 item.setCheck(false);
+                                leftHolder.item.setTextColor(context.getResources().getColor(baseListDialogFragment.getItemTextColor()));
+                                leftHolder.item.setBackgroundColor(context.getResources().getColor(R.color.transparent));
                                 selectItems.remove(item);
                             }else{
-                                leftHolder.item.setTextColor(context.getResources().getColor(R.color.colorAccent));
+
                                 item.setCheck(true);
+                                leftHolder.item.setTextColor(context.getResources().getColor(baseListDialogFragment.getSelectItemTextColor()));
+                                leftHolder.item.setBackgroundColor(context.getResources().getColor(baseListDialogFragment.getSelectItemBackgoundColor()));
                                 selectItems.add(item);
                             }
                         }

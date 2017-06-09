@@ -117,9 +117,12 @@ public class MainActivity extends FragmentActivity {
                 .setItems(items)
                 .setTitleBarColor(R.color.white)
                 .setListColor(R.color.white)
+                .setItemTextColor(R.color.black)
                 .setMultipleChoice(multipleChoice)
+                .setSelectBackgroundColor(R.color.white)
+                .setSelectItemTextColor(R.color.colorAccent)
                 .setGravity(gravity)
-                .setClickListener(new BaseListDialogFragment.ClickListener() {
+                .setClickListener(new BaseListDialogFragment.ClickListener() { //只在多选时有效
                     @Override
                     public void clickSure(List<Item> selectItems) {
                         if(selectItems.size()>0){

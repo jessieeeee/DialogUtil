@@ -150,11 +150,18 @@ public abstract class BaseListDialogFragment extends BaseDialogFragment {
     public abstract int getListColor();
 
     public abstract int getRowNum();
+
+    public abstract int getItemTextColor();
+
+    public abstract int getSelectItemTextColor();
+
+    public abstract int getSelectItemBackgoundColor();
     public BaseListDialogFragment setOnItemClickListener(DialogListAdapter.OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
         return this;
     }
 
+    //只在多选时有效
     public BaseListDialogFragment setClickListener(ClickListener clickListener) {
         this.clickListener = clickListener;
         return this;

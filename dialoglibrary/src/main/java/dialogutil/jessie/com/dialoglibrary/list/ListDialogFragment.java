@@ -26,8 +26,11 @@ public class ListDialogFragment extends BaseListDialogFragment {
     private int gravity=BOTTOM;//对话框显示的位置
     private int titleBarColor=DEFAULT_COLOR;//标题栏颜色
     private int listColor=DEFAULT_COLOR;//列表颜色
-    private int rowNum =4;
-    private List<Item> items;
+    private int rowNum =4;//每行个数
+    private List<Item> items;//数据源
+    private int selectItemTextColor;//选择项文字颜色
+    private int selectItemBackgroundColor;//选择项背景颜色
+    private int itemTextColor;//选项文字颜色
     public static ListDialogFragment newInstance(int orientation) {
         //创建一个带有参数的Fragment实例
         ListDialogFragment fragment = new ListDialogFragment();
@@ -47,6 +50,21 @@ public class ListDialogFragment extends BaseListDialogFragment {
         if (arguments != null) {
             layout = arguments.getInt(TAG_ARG, 0);
         }
+    }
+
+    public ListDialogFragment setItemTextColor(int itemTextColor){
+        this.itemTextColor=itemTextColor;
+        return this;
+    }
+
+    public ListDialogFragment setSelectItemTextColor(int selectItemTextColor){
+        this.selectItemTextColor=selectItemTextColor;
+        return this;
+    }
+
+    public ListDialogFragment setSelectBackgroundColor(int selectItemBackgroundColor){
+        this.selectItemBackgroundColor=selectItemBackgroundColor;
+        return this;
     }
 
     //仅在网格布局有效
@@ -163,6 +181,21 @@ public class ListDialogFragment extends BaseListDialogFragment {
     @Override
     public int getRowNum() {
         return rowNum;
+    }
+
+    @Override
+    public int getItemTextColor() {
+        return itemTextColor;
+    }
+
+    @Override
+    public int getSelectItemTextColor() {
+        return selectItemTextColor;
+    }
+
+    @Override
+    public int getSelectItemBackgoundColor() {
+        return selectItemBackgroundColor;
     }
 
     @Override
