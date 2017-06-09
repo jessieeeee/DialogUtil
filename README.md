@@ -22,7 +22,7 @@ Add it in your root build.gradle at the end of repositories:
 ### Step 2. Add the dependency
 <pre>
 dependencies {
-compile 'com.github.jessieeeee:DialogUtil:v1.0.1'
+compile 'com.github.jessieeeee:DialogUtil:v1.1'
 	}
 </pre>
 ###How to Use
